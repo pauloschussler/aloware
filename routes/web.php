@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use Inertia\Inertia;
+use App\Models\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,4 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
+Route::get('/', [PostsController::class, 'index'])->name('posts.index');

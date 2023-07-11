@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AllPostsCollection;
 use Illuminate\Http\Request;
 use App\Models\Posts;
+use App\Models\User;
+use Inertia\Inertia;
 
 
 class PostsController extends Controller
@@ -11,7 +14,12 @@ class PostsController extends Controller
 
     public function index()
     {
-        return view('posts');
+
+        $posts = Posts::orderBy('created_at', 'desc')->get();
+        return Inertia::render('Home', [
+            'posts' => new AllPostsCollection($posts),
+            'allUsers' => User::all()
+        ]);
     }
 
     public function create()
@@ -27,7 +35,7 @@ class PostsController extends Controller
             'content' => 'required',
         ]);
 
-        Posts::create($request->all());
+        Post::create($request->all());
 
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
