@@ -6,17 +6,19 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@inertiajs/vue3": "^1.0.0",
         "@popperjs/core": "^2.11.6",
+        "@tailwindcss/forms": "^0.5.3",
         "@vitejs/plugin-vue": "^4.0.0",
-        "autoprefixer": "^10.4.14",
+        "autoprefixer": "^10.4.12",
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.5",
-        "postcss": "^8.4.25",
+        "postcss": "^8.4.18",
         "sass": "^1.56.1",
-        "tailwindcss": "^3.3.2",
+        "tailwindcss": "^3.2.1",
         "vite": "^4.0.0",
-        "vue": "^3.2.37"
+        "vue": "^3.2.41"
     },
     "name": "aloware",
     "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\" alt=\"Laravel Logo\"></a></p>",
@@ -35,5 +37,9 @@
     "bugs": {
         "url": "https://github.com/pauloschussler/aloware/issues"
     },
-    "homepage": "https://github.com/pauloschussler/aloware#readme"
+    "homepage": "https://github.com/pauloschussler/aloware#readme",
+    "dependencies": {
+        "vue-material-design-icons": "^5.2.0",
+        "vue3-carousel": "^0.3.1"
+    }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,5 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return Inertia::render('Home');
 });
-
- 
-Route::resource('posts', PostsController::class);
