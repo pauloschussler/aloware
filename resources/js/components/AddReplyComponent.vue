@@ -19,10 +19,17 @@ export default {
 
     provide("parent_comment_id", props.parent_comment_id);
 
+    const handleSubmit = (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      form.post(route("replies.store"), { onSuccess: () => form.reset() });
+    };
+
     return {
       isCollapsed,
       form,
       toggleCollapse,
+      handleSubmit,
     };
   },
   props: {
@@ -49,11 +56,7 @@ export default {
       Reply
     </a>
     <div v-if="!isCollapsed" class="mt-4 p-4 bg-gray-100">
-      <form
-        @submit.prevent="
-          form.post(route('replies.store'), { onSuccess: () => form.reset() })
-        "
-      >
+      <form @submit="handleSubmit">
         <textarea
           v-model="form.comment"
           placeholder="What are you thinking?"

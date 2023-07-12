@@ -13,6 +13,7 @@ const form = useForm({
 <template>
   <div class="blog-comment">
     <div class="mx-auto p-4 sm:p-6 lg:p-8">
+      <h4 class="text-sm text-center">Add a comment</h4>
       <form
         @submit.prevent="
           form.post(route('comments.store'), { onSuccess: () => form.reset() })
