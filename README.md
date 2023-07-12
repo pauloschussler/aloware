@@ -25,9 +25,11 @@ In my environment, I have a connection problem to the MySQL database when trying
 
 In the terminal, inside the project folder, run the following commands:
 
+    composer install
     php artisan key:generate
     php artisan migrate
     php artisan db:seed 
+    npm install
     npm run dev
     
 After that, you should be able to access the system through the address: http://localhost/
