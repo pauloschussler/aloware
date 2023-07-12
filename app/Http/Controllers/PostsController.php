@@ -13,15 +13,12 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Posts::orderBy('created_at', 'desc')->get();
+        $posts = Posts::with('comments')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return Inertia::render('Home', [
             'posts' => new AllPostsCollection($posts),
         ]);
-    }
-
-    public function create()
-    {
-        return view('posts.create');
     }
 }

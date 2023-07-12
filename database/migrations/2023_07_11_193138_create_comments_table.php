@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
 
             //$table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('posts_id');
 
-            $table->foreign('post_id')
+            $table->foreign('posts_id')
                 ->references('id')
                 ->on('posts')
                 ->onDelete('cascade');
