@@ -3,7 +3,6 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
-use App\Models\Comments;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class AllPostsCollection extends ResourceCollection

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comments;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
@@ -12,12 +12,12 @@ class CommentsController extends Controller
     {
 
         $validated = $request->validate([
-            // 'post_id' => 'required',
+            'post_id' => 'required',
             'user' => 'required|string',
             'comment' => 'required|string',
         ]);
 
-        $comment = new Comments;
+        $comment = new Comment;
 
         $comment->post_id = $request->input('post_id');
         $comment->user = $request->input('user');

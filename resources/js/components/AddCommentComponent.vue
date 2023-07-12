@@ -21,17 +21,17 @@ const form = useForm({
         <textarea
           v-model="form.comment"
           placeholder="What are you thinking?"
-          class="my-4 space-y-2 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+          class="my-1 w-full border border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
         ></textarea>
         <InputError :message="form.errors.comment" class="mt-2 space-x-2" />
         <input
           v-model="form.user"
-          placeholder="User name?"
-          class="my-4 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+          placeholder="User name"
+          class="my-1 py-1 w-full border border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
         />
         <InputError :message="form.errors.user" class="mt-2" />
         <input v-model="form.post_id" type="hidden" />
-        <PrimaryButton class="mt-4">Add</PrimaryButton>
+        <PrimaryButton class="mt-4">Comment</PrimaryButton>
       </form>
     </div>
   </div>

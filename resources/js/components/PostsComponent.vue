@@ -1,5 +1,5 @@
 <script setup>
-// import CommentsComponent from "@/Components/CommentsComponent.vue";
+import AddCommentComponent from "@/Components/AddCommentComponent.vue";
 import { useForm, Head } from "@inertiajs/vue3";
 import { ref, onMounted, toRefs } from "vue";
 
@@ -30,7 +30,7 @@ const { posts } = toRefs(props);
           v-for="comment in post.comments"
           :key="comment.id"
         >
-          <div class="post-comment">
+          <div class="post-comment my-4">
             <div class="flex items-center mb-2">
               <img
                 src="/images/user.jpeg"
@@ -42,6 +42,10 @@ const { posts } = toRefs(props);
             <p class="text-base leading-6">{{ comment.comment }}</p>
           </div>
         </div>
+
+        <div class="border-b border-b-gray-200 mt-2"></div>
+
+        <AddCommentComponent />
       </div>
     </div>
   </div>

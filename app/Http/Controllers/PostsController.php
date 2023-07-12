@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AllPostsCollection;
-use App\Models\Posts;
+use App\Models\Post;
 use Inertia\Inertia;
 
 
@@ -13,7 +13,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Posts::with('comments')
+        $posts = Post::with('comments')
             ->orderBy('created_at', 'desc')
             ->get();
 

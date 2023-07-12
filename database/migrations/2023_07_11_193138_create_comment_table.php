@@ -14,18 +14,17 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
 
-            //$table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('posts_id');
-
-            $table->foreign('posts_id')
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')
                 ->references('id')
                 ->on('posts')
                 ->onDelete('cascade');
 
-            // $table->foreign('user_id')
-            //     ->references('id')
-            //     ->on('users')
-            //     ->onDelete('cascade');
+            $table->unsignedBigInteger('parent_comment_id')->nullable();
+            $table->foreign('parent_comment_id')
+                ->references('id')
+                ->on('comments')
+                ->onDelete('cascade');
 
             $table->text('comment');
             $table->string('user');
