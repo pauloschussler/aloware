@@ -14,7 +14,6 @@ class AllPostsCollection extends ResourceCollection
      */
     public function toArray(Request $request)
     {
-
         return $this->collection->map(function ($post) {
             return [
                 'id' => $post->id,
@@ -26,6 +25,13 @@ class AllPostsCollection extends ResourceCollection
                         'id' => $comment->id,
                         'comment' => $comment->comment,
                         'user' => $comment->user,
+                        'replies' => $comment->replies->map(function ($reply) {
+                            return [
+                                'id' => $reply->id,
+                                'comment' => $reply->comment,
+                                'user' => $reply->user,
+                            ];
+                        }),
                     ];
                 }),
             ];

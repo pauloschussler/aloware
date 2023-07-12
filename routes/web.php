@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\RepliesController;
 use Inertia\Inertia;
 use App\Models\Posts;
 
@@ -20,3 +21,5 @@ use App\Models\Posts;
 Route::get('/', [PostsController::class, 'index'])->name('posts.index');
 
 Route::post('/comments', [CommentsController::class, 'store'])->name('comments.store');
+
+Route::post('/replies', [RepliesController::class, 'store'])->name('replies.store');
